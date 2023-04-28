@@ -10,4 +10,4 @@ class Player:
         self.cards.append(new_card)
 
     def print_player_cards(self):
-        print(self.cards)
+        print(f"Your cards: {self.cards}, current score: {sum(self.cards)}")
