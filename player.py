@@ -8,3 +8,6 @@ class Player:
 
     def add_card(self, new_card):
         self.cards.append(new_card)
+
+    def print_player_cards(self):
+        print(self.cards)
