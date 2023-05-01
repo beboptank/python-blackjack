@@ -1,6 +1,6 @@
 import player
 import dealer
-from blackjack_functions import play_game
+from blackjack_functions import start_game
 
 # Blackjack / 21 Rules:
 # - Played using cards
@@ -22,5 +22,5 @@ if player_input == 'y':
     dealer = dealer.Dealer()
 
 while is_playing:
-    play_game(player_one, dealer)
+    start_game(player_one, dealer)
     is_playing = False
