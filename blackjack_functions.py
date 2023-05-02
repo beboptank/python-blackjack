@@ -10,3 +10,7 @@ def start_game(player, dealer):
     dealer.add_card(cards[random.randint(0, len(cards) - 1)])
     dealer.print_first_card()
 
+
+def get_card_total(card_array):
+    return sum(card_array)
+

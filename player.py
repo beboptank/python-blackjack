@@ -11,3 +11,6 @@ class Player:
 
     def print_player_cards(self):
         print(f"{self.name}'s cards: {self.cards}, current score: {sum(self.cards)}")
+
+    def get_cards(self):
+        return self.cards
