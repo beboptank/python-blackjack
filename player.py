@@ -6,7 +6,7 @@ class Player:
     def __str__(self):
         return f"Player {self.name}"
 
-    def add_card(self, new_card):
+    def draw_card(self, new_card):
         self.cards.append(new_card)
 
     def print_player_cards(self):

@@ -17,5 +17,8 @@ def get_card_total(card_array):
 
 
 def draw_card(player):
-    player.add_card(cards[random.randint(0, len(cards) - 1)])
+    player.draw_card(cards[random.randint(0, len(cards) - 1)])
 
+
+def draw_card(dealer):
+    dealer.draw_card(cards[random.randint(0, len(cards) - 1)])
