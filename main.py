@@ -1,3 +1,4 @@
+import blackjack_functions
 import player
 import dealer
 from blackjack_functions import start_game
@@ -23,6 +24,7 @@ if player_input == 'y':
     dealer_one = dealer.Dealer()
     start_game(player_one, dealer_one)
     player_one_cards = player_one.get_cards()
+    dealer_one_cards = dealer_one.get_cards()
 else:
     print("Okay, maybe later!")
 
@@ -45,9 +47,16 @@ while is_playing:
     if draw == 'y':
         player_one.draw_card()
         player_one_cards = player_one.get_cards()
+        dealer_one_cards = dealer_one.get_cards()
         player_one.print_player_cards()
         dealer_one.print_all_cards()
     else:
-        print(f"Final score - {player_one.print_player_cards()}, {dealer_one.print_all_cards()}")
+        print(f"Final score - {player_one.name}: {blackjack_functions.get_card_total(player_one_cards)}, Dealer: {blackjack_functions.get_card_total(dealer_one_cards)}")
+        if blackjack_functions.get_card_total(player_one_cards) > blackjack_functions.get_card_total(dealer_one_cards):
+            print("You win!")
+        elif blackjack_functions.get_card_total(player_one_cards) == blackjack_functions.get_card_total(dealer_one_cards):
+            print("Push. The dealer wins.")
+        else:
+            print("You lose, the dealer wins.")
 
     is_playing = False

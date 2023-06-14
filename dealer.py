@@ -14,3 +14,6 @@ class Dealer:
 
     def print_all_cards(self):
         print(f"Dealer's cards: {self.cards}, current score: {sum(self.cards)}")
+
+    def get_cards(self):
+        return self.cards
