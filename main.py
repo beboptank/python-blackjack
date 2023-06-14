@@ -31,9 +31,15 @@ while is_playing:
     if get_card_total(player_one_cards) == 21:
         print("Blackjack! You win!")
         is_playing = False
+        break
     elif get_card_total(player_one_cards) > 21:
         ace_index = player_one_cards.index(11)
         player_one_cards[ace_index] = 1
+
+    if get_card_total(player_one_cards) > 21:
+        print("You bust. Game over.")
+        is_playing = False
+        break
 
     draw = input("Would you like to hit (draw another card) or stay (keep your current hand)? Type 'y' or 'n' and press Enter. ")
     if draw == 'y':
