@@ -3,6 +3,7 @@ import player
 import dealer
 from blackjack_functions import start_game
 from blackjack_functions import get_card_total
+from logo import logo
 
 # Blackjack / 21 Rules:
 # - Played using cards
@@ -14,6 +15,8 @@ from blackjack_functions import get_card_total
 # - If the dealer ends up with a hand that is smaller than 17, they must draw
 
 is_playing = False
+
+print(logo)
 
 player_input = input("Would you like to play a game of blackjack? Type 'y' or 'n' and press Enter: ")
 
@@ -50,6 +53,16 @@ while is_playing:
         dealer_one_cards = dealer_one.get_cards()
         player_one.print_player_cards()
         dealer_one.print_all_cards()
+        if sum(player_one_cards) < 21:
+            draw_again = input("Hit again? Type y or n: ")
+            if draw_again == 'y':
+                player_one.draw_card()
+        elif sum(player_one_cards) == 21:
+            print("Blackjack! You win!")
+            break
+        else:
+            print("You bust.")
+            break
     else:
         print(f"Final score - {player_one.name}: {blackjack_functions.get_card_total(player_one_cards)}, Dealer: {blackjack_functions.get_card_total(dealer_one_cards)}")
         if blackjack_functions.get_card_total(player_one_cards) > blackjack_functions.get_card_total(dealer_one_cards):
